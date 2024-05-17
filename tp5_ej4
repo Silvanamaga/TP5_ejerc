@@ -1,0 +1,40 @@
+import sys 
+print ("El sueldo es:", sys.argv[1])
+print ("El rango es: ", sys.argv[2])
+#PARA QUE FUNCIONE TENES QUE ESCRIBIR EN LA TERMINAL LO SIGUIENTE: 
+#/bin/python3 /home/sil/Documentos/tp5_ej4 1000 1
+# los dos últimos valores son los componentes, el primero es sueldo, el segundo el rango. 
+# con sys no hago interactivo sino que yo le paso los parámetros juntos. 
+
+def calcular_asignacion(sueldo, rango):
+    if rango == 1:
+        asignacion = sueldo * 0.83
+    elif rango == 2:
+        asignacion = sueldo * 1.2
+    elif rango == 3:
+        asignacion = sueldo * 5
+    else:
+        asignacion = 0
+        print("Rango no válido. Por favor, seleccione un rango válido.")
+    return asignacion
+
+def main():
+    # Verificar que se proporcionaron dos argumentos (sueldo y rango)
+    if len(sys.argv) != 3:
+        print("Uso: python programa.py <sueldo> <rango>")
+        sys.exit(1)
+
+    # Obtener sueldo y rango de los argumentos
+    try:
+        sueldo = float(sys.argv[1])
+        rango = int(sys.argv[2])
+    except ValueError:
+        print("Error: Los valores deben ser numéricos.")
+        sys.exit(1)
+
+    # Calcular la asignación del empleado
+    asignacion = calcular_asignacion(sueldo, rango)
+    print("La asignación del empleado es:", asignacion)
+
+if __name__ == "__main__":
+    main()

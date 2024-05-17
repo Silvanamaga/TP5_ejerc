@@ -1,0 +1,16 @@
+#!/bin/bash
+# Ejecutar contador1.py en segundo plano y obtener el PID
+python3 cont1 10 & pid1=$!
+# Ejecutar contador2.py en segundo plano y obtener el PID
+python3 cont2 10 & pid2=$!
+# Ejecutar contador3.py en segundo plano y obtener el PID
+python3 cont3 10 & pid3=$!
+echo "PID del contador 1: $pid1"
+echo "PID del contador 2: $pid2"
+echo "PID del contador 3: $pid3"
+
+# Esperar a que todos los procesos terminen
+wait
+
+
+#Debes colocar sí o sí en la terminal bash script_bash5

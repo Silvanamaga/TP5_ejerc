@@ -1,0 +1,27 @@
+def asignacion_empl(sueldo, rango):
+    if rango == 1:
+        asignacion = sueldo * 0.83
+    elif rango == 2:
+        asignacion = sueldo * 1.2
+    elif rango == 3:
+        asignacion = sueldo * 5
+    else:
+        asignacion = 0  # Si el rango no es válido, la asignación se establece en 0
+        print("Rango no válido. Por favor, seleccione un rango válido.")
+    return asignacion
+
+# Función para interactuar con persona usuario, así ingresa datos
+def entrada():
+    sueldo = float(input("Ingrese el sueldo del empleado: "))
+    rango = int(input("Ingrese el rango del empleado (1, 2 o 3): "))
+    return sueldo, rango
+
+# Función principal del programa
+def main():
+    sueldo, rango = entrada()
+    asignacion = asignacion_empl(sueldo, rango)
+    if asignacion:
+        print("La asignación del empleado es:", asignacion)
+
+if __name__ == "__main__":
+    main()

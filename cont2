@@ -1,0 +1,13 @@
+# contador2.py  
+import os
+import time
+
+def contador(numero_max):
+    pid = os.getpid()
+    print(f"PID del contador2: {pid}")
+    for i in range(1, numero_max + 1):
+        print(f"Contador: {i}")
+        time.sleep(1)
+
+if __name__ == "__main__":
+    contador(10)  # Cambia 10 por el número máximo que deseas contar

@@ -1,0 +1,14 @@
+import os
+
+# Para usar la librería os uso el comando "import". 
+# obtengo la lista de todos los elementos en el directorio "/dev" para lo que
+# uso os.listdir y lo guardo en una variable elementos_dev
+elementos_dev = os.listdir("/dev")
+
+# Luego filtro solo los directorios (carpetas) de la lista
+directorios_dev = [elemento for elemento in elementos_dev if os.path.isdir(os.path.join("/dev", elemento))]
+#El filtro permite obtener solo los directorios del directorio "/dev", excluyendo los archivos
+# Imprimo la lista de directorios dentro de "/dev"
+print("Directorios dentro de /dev:")
+for directorio in directorios_dev:
+    print(directorio)

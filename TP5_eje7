@@ -1,0 +1,46 @@
+import psutil
+from datetime import datetime
+
+def obtener_hora_actual():
+    ahora = datetime.now()
+    hora_actual = ahora.strftime("%H:%M:%S")
+    return hora_actual
+
+def obtener_estado_memoria():
+    memoria = psutil.virtual_memory()
+    estado = {
+        "Total": convertir_bytes(memoria.total),
+        "Disponible": convertir_bytes(memoria.available),
+        "Usada": convertir_bytes(memoria.used),
+        "Porcentaje de uso": f"{memoria.percent}%"
+    }
+    return estado
+
+def obtener_almacenamiento():
+    particion = psutil.disk_usage('/')
+    almacenamiento = {
+        "Total": convertir_bytes(particion.total),
+        "Disponible": convertir_bytes(particion.free),
+        "Usado": convertir_bytes(particion.used),
+        "Porcentaje de uso": f"{particion.percent}%"
+    }
+    return almacenamiento
+
+def convertir_bytes(bytes, precision=2):
+    kilobytes = bytes / 1024
+    megabytes = kilobytes / 1024
+    gigabytes = megabytes / 1024
+    return round(gigabytes, precision)
+
+def imprimir_info_sistema():
+    print("Hora del sistema:", obtener_hora_actual())
+    print("Estado de la memoria RAM:")
+    memoria = obtener_estado_memoria()
+    for key, value in memoria.items():
+        print(f"{key}: {value}")
+    print("Almacenamiento disponible en la partición /:")
+    almacenamiento = obtener_almacenamiento()
+    for key, value in almacenamiento.items():
+        print(f"{key}: {value}")
+
+imprimir_info_sistema()

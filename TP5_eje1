@@ -1,0 +1,3 @@
+mascotas = ["perro", "gato", "loro"]
+for mascota in mascotas:  # Corregir el nombre de la variable en el bucle
+    print("La siguiente mascota es:", mascota)  # Corregir el nombre de la variable en el print y agregar dos puntos al final del bucle

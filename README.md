@@ -1,1 +1,1 @@
-Ver tutorial. En este se agregan las consignas de los ejerciciones y la resolución con comandos y algunos comentarios así como las imágenes resultantes que evidencian su funcionamiento. 
+Ver tutorial. En este se agregan las consignas de los ejercios, la resolución con comandos junto a algunos comentarios. En cada ejercicio se adjuntan imágenes de los resultados de los comandos para mostrar el funcionamiento esperado. 
